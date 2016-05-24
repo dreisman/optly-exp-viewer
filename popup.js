@@ -2,7 +2,12 @@
 
 function setOptimizelyData(optly) {
   if (optly.hasOptimizely) {
-    $("body").append("<h4>Optimizely experiments found</h4>");
+    $("#experiments").before("<h4>Experiment names:</h4>");
+    console.log("listing experiments...");
+    $.each(optly.data["experiments"], function(key, value) {
+      console.log(value["name"]);
+      $("#experiments").append(value["name"] + "\n");
+    });
   } else {
     $("body").append("<h4>No Optimizely experiments found</h4>");
   }
