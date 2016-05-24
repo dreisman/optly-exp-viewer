@@ -35,13 +35,11 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
   if ((msg.from === 'popup') && (msg.subject === 'getOptimizely')) {
     var ret = {};
     if (!hasOptly) {
-      console.log("no optly");
       ret = {
         hasOptimizely: false
       };
     }
     else {
-      console.log("has optly");
       ret = {
         hasOptimizely: true,
         data: optlyData

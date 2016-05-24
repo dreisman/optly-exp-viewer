@@ -7,6 +7,18 @@ function setOptimizelyData(optly) {
     $.each(optly.data["experiments"], function(key, value) {
       console.log(value["name"]);
       $("#experiments").append("<span>" + value["name"] + "</span><br>");
+
+      // List variations:
+      $.each(value["variation_ids"], function(index, value) {
+        var var_name = optly.data["variations"][value]["name"];
+        $("#experiments").append("<span>&nbsp;&nbsp;&nbsp;&nbsp;-Variation: "+ var_name + "</span><br>");
+      });
+    });
+    $("#audiences").before("<h4>Audience names:</h4>");
+    console.log("listing audiences...");
+    $.each(optly.data["audiences"], function(key, value) {
+      console.log(value["name"]);
+      $("#audiences").append("<span>" + value["name"] + "</span><br>");
     });
   } else {
     $("body").append("<h4>No Optimizely experiments found</h4>");
