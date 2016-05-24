@@ -5,7 +5,7 @@
     "description": "This extension will let you view experiments that the site sets through the third-party service Optimizely",
 
     "browser_action": {
-        "default_icon": "icon_sample.png",
+        "default_icon": "optly_inactive.png",
         "default_popup": "popup.html"
     },
 

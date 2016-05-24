@@ -6,7 +6,7 @@ function setOptimizelyData(optly) {
     console.log("listing experiments...");
     $.each(optly.data["experiments"], function(key, value) {
       console.log(value["name"]);
-      $("#experiments").append(value["name"] + "\n");
+      $("#experiments").append("<span>" + value["name"] + "</span><br>");
     });
   } else {
     $("body").append("<h4>No Optimizely experiments found</h4>");
