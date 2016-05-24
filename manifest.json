@@ -1,0 +1,34 @@
+{
+    "manifest_version" : 2,
+
+    "name": "Optimizely Experiment Plugin",
+    "description": "This extension will let you view experiments that the site sets through the third-party service Optimizely",
+
+    "browser_action": {
+        "default_icon": "icon_sample.png",
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ],
+
+    "web_accessible_resources": [
+        "inject.js"
+    ],
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "version": "1.0"
+}
