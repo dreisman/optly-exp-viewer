@@ -19,36 +19,4 @@ chrome.runtime.onMessage.addListener(function (msg, sender) {
 
  	 
   }
-  /*
-  else if ((msg.from === 'content') && (msg.subject === 'executeExperiments')) {
-  	$.each(msg.data["experiments"], function(key, value) {
-        // Run experimental setup code
-        if (value.hasOwnProperty("code") && value["code"] !== "") {
-  	      console.log(value["code"]);
-          var code = "eval('" + value["code"] + "');";
-          console.log(code);
-  	      var code_details = { 
-  	      	code: "eval('" + value["code"] + "');", 
-  	      	runAt: "document_idle" 
-  	      };
-  	      chrome.tabs.executeScript(sender.tab.id, code_details);
-        }
-        	
-        // Run code for each variation
-        $.each(value["variation_ids"], function(index, value) {
-        	if (msg.data["variations"][value].hasOwnProperty("code") && msg.data["variations"][value]["code"] !== "") {
-  	        var variation_code = msg.data["variations"][value]["code"];
-  	        code_details = { 
-  	        	code: "eval('" + variation_code + "');",
-  	        	runAt: "document_idle" 
-  	        };
-  	     	chrome.tabs.executeScript(sender.tab.id, code_details);
-       	}
-        });
-      });
-      chrome.runtime.sendMessage({
-      	from: "background",
-      	subject: "experimentStop"
-      });
-    }*/
 });
