@@ -24,8 +24,6 @@ function setOptimizelyData(optly) {
     $("body").append("<h4>No Optimizely experiments found</h4>");
   }
 
-  //document.getElementById('hasOptimizely').textContent   = optly.hasOptimizely;
-  //document.getElementById('optlyData').textContent   = optly.data;
 }
 
 // Once the DOM is ready...

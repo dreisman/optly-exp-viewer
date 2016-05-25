@@ -11,13 +11,15 @@
 
     "permissions": [
         "activeTab",
-        "tabs"
+        "tabs",
+        "http://*/",
+        "https://*/"
     ],
 
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["content.js"],
+            "js": ["jquery-2.2.4.min.js", "content.js"],
             "run_at": "document_idle"
         }
     ],
@@ -27,7 +29,7 @@
     ],
 
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["jquery-2.2.4.min.js", "background.js"]
     },
 
     "version": "1.0.1"
